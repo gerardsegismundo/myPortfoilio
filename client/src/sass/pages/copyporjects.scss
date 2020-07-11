@@ -1,0 +1,215 @@
+.projects {
+  box-shadow: inset -72px 10px 125px 162px rgba(0, 0, 0, 0.56);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include media('<desktop') {
+    padding-top: calc(26px + 3rem + 2vh);
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh 60vh;
+  }
+
+  .project-img {
+    position: relative;
+
+    .projects-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-left: 5vw;
+
+      @include media('<desktop') {
+        align-items: start;
+        padding-left: 0vw;
+        justify-content: center;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        transform-origin: center;
+
+        @include media('<desktop') {
+          max-height: 50vh;
+        }
+
+        &.prev-img,
+        &.next-img,
+        &.current {
+          position: absolute;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .details-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    height: 100vh;
+
+    @include media('<desktop') {
+      display: grid;
+      height: 50vh;
+      grid-template-rows: 1fr 5fr;
+    }
+
+    .details {
+      word-wrap: break-word;
+      opacity: 0.65;
+      color: $antique-brass-1;
+      transform: translateY(-10vh);
+      transform-origin: center;
+      max-width: 35vw;
+      padding-right: 5vw;
+
+      @include media('<desktop') {
+        transform: translateY(0);
+        max-width: 70vw;
+        padding-right: 0;
+        margin: 10rem auto auto auto;
+        text-align: center;
+        order: 2;
+      }
+
+      @include media('<tablet') {
+        transform: translateY(0);
+        max-width: 85vw;
+        padding-right: 0;
+      }
+
+      h2 {
+        &.title {
+          text-shadow: -4px 4px rgba($elegant-color-dark, 0.45);
+          font-size: 8rem;
+          // margin-bottom: 3.5rem;
+          margin-bottom: 0.5rem;
+
+          @include media('<desktop') {
+            margin-top: 1rem;
+          }
+        }
+
+        &.secondary {
+          color: $orange;
+          font-weight: 100;
+          letter-spacing: 0.5rem;
+
+          font-size: 1.75rem;
+          margin-bottom: 5rem;
+        }
+      }
+
+      .message {
+        line-height: 2.5rem;
+        color: $antique-brass-5;
+        margin-bottom: 5rem;
+      }
+
+      button {
+        display: inline-block;
+        padding: 0;
+        height: 7.5rem;
+        color: $yellow;
+
+        &:nth-of-type(2) {
+          position: absolute;
+          margin-left: 25%;
+        }
+
+        @include media('<desktop') {
+          &:nth-of-type(1) {
+            position: absolute;
+            left: 25%;
+          }
+
+          &:nth-of-type(2) {
+            position: absolute;
+            right: 25%;
+          }
+        }
+
+        @include media('<tablet') {
+          &:nth-of-type(1) {
+            position: absolute;
+            left: 15%;
+          }
+
+          &:nth-of-type(2) {
+            position: absolute;
+            right: 15%;
+          }
+        }
+      }
+    }
+
+    .arrow-container {
+      position: absolute;
+      bottom: 10vh;
+      right: 10vw;
+      transition: opacity 0.4s ease-in-out;
+
+      @include media('<desktop') {
+        mix-blend-mode: difference;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+        right: 0;
+        position: static;
+        order: 1;
+      }
+
+      &.is-animating {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      svg {
+        transition: all 0.1s;
+        opacity: 0.4;
+        cursor: pointer;
+        @include media('<desktop') {
+          opacity: 0.9;
+        }
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        &.arrow-left {
+          margin-right: 5rem;
+
+          @include media('<desktop') {
+            position: absolute;
+            left: 17vw;
+          }
+
+          @include media('<tablet') {
+            left: 10vw;
+          }
+        }
+
+        &.arrow-right {
+          @include media('<desktop') {
+            position: absolute;
+            right: 17vw;
+            // display: none;
+          }
+          @include media('<tablet') {
+            right: 10vw;
+          }
+        }
+      }
+      // svg.arrow-right {
+      //   // transform: scale(2);
+      //   // top: 0;
+      // }
+    }
+  }
+}

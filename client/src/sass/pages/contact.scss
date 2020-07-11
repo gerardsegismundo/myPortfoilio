@@ -1,0 +1,192 @@
+.contact {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  // background-color: rgba(black, 0.5);
+  box-shadow: inset -72px 10px 125px 162px rgba(0, 0, 0, 0.56);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  // alignment -----------------
+  .col-1,
+  .col-2 {
+    height: 100vh;
+    width: 100%;
+    padding-top: 25vh;
+    // padding-bottom: 20rem;
+  }
+
+  .col-1 {
+    padding-right: 15rem;
+    padding-left: 15rem;
+  }
+
+  .col-2 {
+    padding-left: 0rem;
+    padding-right: 15rem;
+  }
+  // -------------------------------
+
+  .col-1 {
+    color: $antique-brass-1;
+
+    & > p {
+      transform: translateY(-5rem);
+      opacity: 0.6;
+
+      // Hello!
+      &:first-of-type {
+        text-shadow: -4px 4px rgba($elegant-color-dark, 0.25);
+        font-size: 8rem;
+        margin-bottom: 3.5rem;
+      }
+
+      // Do you message
+      &:nth-of-type(2) {
+        font-size: 2.4rem;
+        line-height: 4rem;
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: flex-end;
+      width: 50%;
+      color: $orange;
+      justify-content: space-between;
+      margin-bottom: 12.5rem;
+
+      i {
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: -4px 4px 15px 1px rgba($yellow, 0.1) inset;
+        opacity: 0.75;
+        text-shadow: -4px 4px rgba($elegant-color-dark, 0.75);
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          opacity: 0.9;
+          color: white;
+          transform: scale(1.75);
+          text-shadow: -5px 8px 13px #1a1a1a !important;
+        }
+      }
+    }
+
+    section.contact-details {
+      font-family: $font-family-secondary;
+      opacity: 0.8;
+      transition: opacity ease 0.4s;
+
+      p {
+        font-size: 1.5rem;
+
+        // deets
+        &:first-of-type {
+          font-size: 1.25rem;
+          opacity: 0.75;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+          color: $antique-brass-5;
+
+          // arrow down icon
+          svg {
+            transform: translate(0.5rem, 0.5rem);
+          }
+        }
+
+        // phone number
+        &:nth-last-of-type(2) {
+          font-family: none;
+          letter-spacing: 0.025rem;
+        }
+
+        &:nth-last-of-type(1) {
+          margin-top: 0.5rem;
+          color: $yellow;
+          text-decoration: underline;
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .col-2 {
+    display: flex;
+
+    form.contact-form {
+      opacity: 0.7;
+      transition: all 0.3s;
+      // margin-right: 10rem;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      .input-group {
+        display: flex;
+
+        .custom-input {
+          width: 45%;
+          margin-bottom: 5rem;
+
+          label {
+            font-weight: bold;
+          }
+
+          &:first-of-type {
+            margin-right: 10%;
+          }
+        }
+      }
+
+      // send button
+      button {
+        border: none;
+        display: block;
+        margin-top: 4rem;
+        opacity: 0.7;
+        padding: 0;
+        transition: transform ease-in-out 0.4s;
+        position: relative;
+
+        &:after {
+          transition: opacity ease-in 0.4s;
+          pointer-events: none;
+          content: '';
+          position: absolute;
+          width: 200%;
+          height: 300%;
+          top: -225px;
+          left: -30%;
+          right: -20rem;
+          opacity: 0;
+          border-radius: 50%;
+          box-shadow: -18px 200px 55px 5px rgba($orange, 0.5);
+        }
+
+        svg {
+          transition: all ease-in-out 0.4s;
+          transform: rotate(45deg) translate(1.2rem, 0.1rem);
+          transform-origin: center;
+          height: 30px;
+        }
+
+        &:not(:disabled):hover {
+          opacity: 0.9;
+          transition-delay: 0.2s;
+
+          &:after {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}

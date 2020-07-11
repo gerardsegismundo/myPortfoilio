@@ -1,0 +1,42 @@
+.custom-textarea {
+  label[for='message'] {
+    display: block;
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: 0.5s;
+    color: $antique-brass-5;
+    width: fit-content;
+    padding: 0.5rem;
+    opacity: 0;
+
+    &.is-focused {
+      transform: translateY(-2rem);
+      font-size: 1.25rem;
+      opacity: 1;
+      color: $light-grey-0;
+      background-color: $yellow;
+    }
+  }
+
+  textarea[name='message'] {
+    transition: border 0.3s ease-out;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    padding: 2rem;
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    height: 30rem;
+    box-sizing: border-box;
+    min-width: 60rem;
+    max-width: 50vw;
+    max-height: 80vw;
+    resize: none;
+
+    &:focus,
+    &.is-focused {
+      border: 1px solid $yellow;
+    }
+  }
+}

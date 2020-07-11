@@ -1,0 +1,113 @@
+.projects {
+  overflow: hidden;
+  padding-top: calc(26px + 3rem + 2vh);
+  overflow-x: hidden;
+  box-shadow: inset -72px 10px 125px 162px rgba(0, 0, 0, 0.56);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 50vh 40vh;
+
+  .project-img {
+    position: relative;
+
+    .projects-container {
+      position: relative;
+      display: flex;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        transform-origin: center;
+        max-height: 50vh;
+        position: absolute;
+        opacity: 0;
+
+        &.prev-img {
+        }
+
+        &.current-img {
+        }
+
+        &.next-img {
+        }
+      }
+    }
+  }
+
+  .details-container {
+    .details {
+      overflow: scroll;
+      word-wrap: break-word;
+      opacity: 0.65;
+      color: $antique-brass-1;
+      transform-origin: center;
+      text-align: center;
+
+      .title {
+        text-shadow: -4px 4px rgba($elegant-color-dark, 0.45);
+        font-size: 5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .secondary {
+        color: $orange;
+        font-weight: 100;
+        letter-spacing: 0.5rem;
+
+        font-size: 1.75rem;
+        margin-bottom: 5rem;
+      }
+
+      .message {
+        line-height: 2.5rem;
+        color: $antique-brass-5;
+        margin-bottom: 5rem;
+      }
+
+      button {
+        color: $yellow;
+
+        &.proj-btn {
+        }
+
+        &.site-btn {
+        }
+      }
+    }
+
+    .arrow-container {
+      position: fixed;
+      bottom: 0vh;
+      width: 100vw;
+      height: 10rem;
+
+      &.is-animating {
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      svg {
+        transition: all 0.1s;
+        fill: black;
+        height: 45px;
+        width: 45px;
+        background-color: $yellow;
+        border-radius: 100%;
+        position: absolute;
+        bottom: 2rem;
+        cursor: pointer;
+
+        &.arrow-left {
+          // position: absolute;
+          left: 2rem;
+        }
+
+        &.arrow-right {
+          background-color: $yellow;
+          right: 2rem;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

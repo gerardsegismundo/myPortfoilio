@@ -1,0 +1,235 @@
+.home {
+  box-shadow: inset -72px 10px 125px 162px rgba(0, 0, 0, 0.56);
+  width: 100vw;
+  min-height: 100vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-left: 15rem;
+
+  display: grid;
+  grid-template-columns: 35vw 65vw;
+
+  // PICTURE CONTAINER   %image
+  aside.left-col {
+    position: relative;
+    display: flex;
+    padding-left: 5vw;
+
+    .primary-pic {
+      transition: all ease-in 0.3s;
+      align-self: flex-end;
+      opacity: 0.25;
+      filter: blur(2px) sepia(0.5);
+      border-radius: 2px;
+
+      height: 45rem;
+      margin-bottom: 7.5rem;
+
+      &:hover {
+        transform: scale(1.025) skew(1deg, -3deg);
+        box-shadow: -15px 15px 15px 10px rgba($dark-grey-10, 1);
+
+        filter: blur(0) sepia(0.1);
+        opacity: 1;
+      }
+    }
+  }
+
+  // CARD
+  main.right-col {
+    padding: 5rem 5rem 5rem 8rem;
+    // pointer-events: none;
+    font-family: $font-family-primary;
+    text-transform: uppercase;
+    border-radius: 2px;
+    position: relative;
+    line-height: 10rem;
+    position: static;
+    height: 65rem;
+    word-spacing: 0.1rem;
+    width: 50%;
+
+    // MY NAME
+    h1 {
+      opacity: 0.85;
+      font-weight: 100;
+      text-shadow: -5px 8px 13px rgba($dark-grey-10, 1) !important;
+
+      border-left: 0.5rem solid rgba($antique-brass-8, 0.5);
+      padding-left: 5rem;
+
+      .name {
+        &:not(:nth-of-type(3)) {
+          color: $light-grey-5;
+        }
+
+        &:nth-of-type(3) {
+          color: $antique-brass-8;
+        }
+      }
+
+      margin-bottom: 3rem;
+      font-size: 7rem;
+    }
+
+    // FULL STACK JAVASCRIPT DEVELOPER
+    h2 {
+      color: $default-font-color;
+      text-justify: inter-character;
+
+      line-height: 6rem;
+      display: inline-flex;
+      transition: all 0.4s;
+      position: absolute;
+
+      .plus {
+        margin-right: 3rem;
+      }
+
+      &.letters-original {
+        opacity: 0;
+      }
+
+      // 'FULLSTACK JAVASCRIPT DEVELOPER' => 'K' && 'T' -- for spaces
+      .letters {
+        &:first-of-type,
+        &:nth-of-type(10),
+        &:nth-of-type(20) {
+          margin-right: 3rem;
+        }
+      }
+
+      word-break: break-word;
+      text-align: left;
+
+      letter-spacing: 0.25rem;
+      opacity: 0.5;
+      font-size: 1.7rem;
+    }
+
+    // VIEW MY WORK
+    .view-button {
+      opacity: 0;
+      bottom: 2rem;
+      position: absolute;
+      transition: all ease-in-out 0.4s;
+      transform-origin: center;
+      line-height: 8rem;
+      overflow: hidden;
+
+      &--text {
+        color: $antique-brass-5;
+        text-decoration: none;
+        margin-left: 5rem;
+        margin-right: 5rem;
+
+        .fa-arrow-right {
+          transition: all ease-in-out 0.4s;
+          opacity: 0;
+        }
+      }
+
+      &:hover {
+        bottom: 3rem;
+        transform: translate(0px, -30px) skew(0deg, -3deg) scale(1.1) !important;
+        // background-color: rgba($dark-grey-10, 0.2);
+        box-shadow: -12px 12px 15px 3px rgba($dark-grey-10, 0.75);
+
+        .view-button--text {
+          color: $antique-brass-1;
+
+          i.fa-arrow-right {
+            opacity: 1 !important;
+          }
+        }
+      }
+
+      // ANIMATING BORDER
+      span {
+        &:nth-child(1) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(
+            to right,
+            $antique-brass-10,
+            $dark-grey-1
+          );
+          animation: animate1 2s linear infinite;
+        }
+        @keyframes animate1 {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(
+            to bottom,
+            $antique-brass-10,
+            $dark-grey-1
+          );
+          animation: animate2 2s linear infinite;
+          animation-delay: 1s;
+        }
+        @keyframes animate2 {
+          0% {
+            transform: translateY(-100%);
+          }
+          100% {
+            transform: translateY(100%);
+          }
+        }
+
+        &:nth-child(3) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(to left, $antique-brass-10, $dark-grey-1);
+          animation: animate3 2s linear infinite;
+        }
+        @keyframes animate3 {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        &:nth-child(4) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          background: linear-gradient(to top, $antique-brass-10, $dark-grey-1);
+          animation: animate4 2s linear infinite;
+          animation-delay: 1s;
+        }
+        @keyframes animate4 {
+          0% {
+            transform: translateY(100%);
+          }
+          100% {
+            transform: translateY(-100%);
+          }
+        }
+      }
+    }
+  }
+}
